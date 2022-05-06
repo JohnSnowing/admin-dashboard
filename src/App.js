@@ -12,9 +12,6 @@ import NewProduct from "./pages/newProduct/NewProduct";
 import { useState } from "react";
 
 function App() {
-  const MONTHS = [];
-
-  const [userState, setUserState] = useState([]);
   return (
     <Router>
       <Topbar />
