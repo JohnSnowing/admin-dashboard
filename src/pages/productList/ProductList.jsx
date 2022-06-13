@@ -5,12 +5,14 @@ import { productRows } from "../../dummyData";
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { MovieContext } from "../../context/movieContext/MovieContext";
-import { getMovies } from "../../context/movieContext/apiCalls";
+import { deleteMovie, getMovies } from "../../context/movieContext/apiCalls";
 
 export default function ProductList() {
   const { movies, dispatch } = useContext(MovieContext);
 
-  const handleDelete = (id) => {};
+  const handleDelete = (id) => {
+    deleteMovie(id, dispatch);
+  };
 
   useEffect(() => {
     getMovies(dispatch);
@@ -42,7 +44,9 @@ export default function ProductList() {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/product/" + params.row._id}>
+            <Link
+              to={{ pathname: "/product/" + params.row._id, movie: params.row }}
+            >
               <button className="productListEdit">Edit</button>
             </Link>
             <DeleteOutline

@@ -128,3 +128,9 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+/* custom */
+
+.productInfoKey {
+  margin-right: 20px;
+}
