@@ -42,6 +42,9 @@ export default function NewProduct() {
                         case "running":
                             console.log("Upload is running");
                             break;
+                        default:
+                            console.log("defaulet");
+                            break;
                     }
                 },
                 (error) => {
@@ -60,6 +63,9 @@ export default function NewProduct() {
                         case "storage/unknown":
                             console.log(error);
                             // Unknown error occurred, inspect error.serverResponse
+                            break;
+
+                        default:
                             break;
                     }
                 },
